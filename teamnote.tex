@@ -166,16 +166,7 @@ NTT 사용 시에 자료형에 유의하여, 덧셈 혹은 곱셈에서 Integer 
 
 \lstinputlisting[style=mycpp]{src/math/ntt.cpp}
 
-\subsection{FFT with AVX}
-
-실수 배열에 대하여 convolution을 FFT 한 번, Inverse FFT 한 번으로 계산할 수 있다.
-새로운 배열 $a + bi$를 정의하자. 이 배열의 자기 자신과의 convolution의 허수부는
-$a$와 $b$의 convolution의 2배와 같다.
-
-\lstinputlisting[style=mycpp]{src/math/fft-avx.cpp}
-
-\subsection{FFT with AVX}
-
+\subsection{Example for FFT}
 \lstinputlisting[style=mycpp]{src/math/fft-example.cpp}
 
 \subsection{Polynomial Division}
@@ -209,9 +200,6 @@ Index-k Nim : 한 번에 최대 k개의 더미를 골라 각각의 더미에서 
 \subsection{Order statistic tree}
 \lstinputlisting[style=mycpp]{src/data-structure/order-statistic-tree.cpp}
 
-\subsection{Fenwick Tree}
-\lstinputlisting[style=mycpp]{src/data-structure/fenwick-tree.cpp}
-
 \subsection{Segment Tree with Lazy Propagation}
 \lstinputlisting[style=mycpp]{src/data-structure/segtree-lazyprop.cpp}
 
@@ -221,6 +209,8 @@ Index-k Nim : 한 번에 최대 k개의 더미를 골라 각각의 더미에서 
 \subsection{Splay Tree}
 \lstinputlisting[style=mycpp]{src/data-structure/splay-tree.cpp}
 
+\subsection{Dynamic Connectivity with Example}
+\lstinputlisting[style=mycpp]{src/data-structure/dynamic-connectivity.cpp}
 
 \section{DP}
 
@@ -280,20 +270,8 @@ $A[i][j-1] \leq A[i][j] \leq A[i+1][j]$
 \subsection{SCC}
 \lstinputlisting[style=mycpp]{src/graph/scc.cpp}
 
-\subsection{2-SAT}
-
-$(b_{x} \lor b_{y}) \land (\neg b_{x} \lor b_{z}) \land (b_{z} \lor \neg b_{x}) \land \cdots$ 같은 form을 2-CNF라고 함. 주어진 2-CNF 식을 참으로 하는 $\{ b_1, b_2, \cdots \}$ 가 존재하는지, 존재한다면 그 값은 무엇인지 구하는 문제를 2-SAT이라 함.
-
-boolean variable $b_{i}$ 마다 $b_{i}$를 나타내는 정점, $\neg b_{i} $를 나타내는 정점 2개를 만듦. 각 clause $b_{i} \lor b_{j}$ 마다 $\neg b_{i} \to b_{j}$, $\neg b_{j} \to b_{i}$ 이렇게 edge를 이어줌. 그렇게 만든 그래프에서 SCC를 다 구함. 어떤 SCC 안에 $b_{i}$ 와 $\neg b_{i}$가 같이 포함되어있다면 해가 존재하지 않음. 아니라면 해가 존재함.
-
-해가 존재할 때 구체적인 해를 구하는 방법. 위에서 SCC를 구하면서 SCC DAG를 만들어준다. 거기서 위상정렬을 한 후, 앞에서부터 SCC를 하나씩 봐준다. 현재 보고있는 SCC에 $b_{i}$가 속해있는데 얘가 $\neg b_{i}$보다 먼저 등장했다면 $b_{i} = \mathrm{false}$, 반대의 경우라면 $b_{i} = \mathrm{true}$, 이미 값이 assign되었다면 pass.
-
 \subsection{BCC, Cut vertex, Bridge}
 \lstinputlisting[style=mycpp]{src/graph/bcc.cpp}
-
-\subsection{Block-cut Tree}
-
-각 BCC 및 cut vertex가 block-cut tree의 vertex가 되며, BCC와 그 BCC에 속한 cut vertex 사이에 edge를 이어주면 된다.
 
 \subsection{Heavy-Light Decomposition}
 \lstinputlisting[style=mycpp]{src/graph/hld.cpp}
@@ -396,20 +374,5 @@ $A = i + \frac{b}{2} - 1$
 
 소수 : $10\,007$ , $10\,009$ , $10\,111$ , $31\,567$ , $70\,001$ , $1\,000\,003$ , $1\,000\,033$ , $4\,000\,037$ , $99\,999\,989$ , $999\,999\,937$ , $1\,000\,000\,007$ , $1\,000\,000\,009$ , $9\,999\,999\,967$ , $99\,999\,999\,977$
 
-\subsection{체계적인 접근을 위한 질문들}
-
-``알고리즘 문제 해결 전략'' 에서 발췌함
-\begin{itemize}
-\item 비슷한 문제를 풀어본 적이 있던가?
-\item 단순한 방법에서 시작할 수 있을까? (brute force)
-\item 내가 문제를 푸는 과정을 수식화할 수 있을까? (예제를 직접 해결해보면서)
-\item 문제를 단순화할 수 없을까?
-\item 그림으로 그려볼 수 있을까?
-\item 수식으로 표현할 수 있을까?
-\item 문제를 분해할 수 있을까?
-\item 뒤에서부터 생각해서 문제를 풀 수 있을까?
-\item 순서를 강제할 수 있을까?
-\item 특정 형태의 답만을 고려할 수 있을까? (정규화)
-\end{itemize}
-
 \end{document}
+
