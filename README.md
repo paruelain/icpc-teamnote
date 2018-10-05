@@ -8,7 +8,7 @@ sudo apt-get install texlive-lang-cjk
 sudo apt-get install texlive-fonts-recommended
 ```
 
-or install  tex live for windows
+or install texlive / miktek for windows
 
 ## How to build
 
