@@ -2,10 +2,10 @@ set nocp ai si nu et bs=2 mouse=a
 set ts=4 sts=4 sw=4 hls showmatch
 set ruler rulerformat=%17.(%l:%c%)
 set noswapfile autoread wildmenu wildmode=list:longest
-syntax on | colorscheme evening
+syntax on
 
-map <F5> <ESC>:w<CR>:!g++ -g -Wall --std=c++0x -O2 %:r.cpp -o %:r && %:r < %:r.in > %:r.out<CR>
-map <F6> <ESC>:w<CR>:!g++ -g -Wall --std=c++0x -O2 %:r.cpp -o %:r && %:r < %:r.in<CR>
+map <F5> <ESC>:w<CR>:!g++ -g -Wall --std=c++0x -O2 %:r.cpp -o %:r && ./%:r < %:r.in > %:r.out<CR>
+map <F6> <ESC>:w<CR>:!g++ -g -Wall --std=c++0x -O2 %:r.cpp -o %:r && ./%:r < %:r.in<CR>
 
 map <C-t> :tabnew<CR>
 
