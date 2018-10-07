@@ -62,17 +62,13 @@ struct hld {
     int lca(int u, int v) {
         if (depth[u] < depth[v]) swap(u, v);
 
-        int logu;
-        for (logu = 1; 1 << logu <= depth[u]; logu++);
-        logu--;
-
         int diff = depth[u] - depth[v];
-        for (int i = logu; i >= 0; --i) {
-            if ((diff >> i) & 1) u = pa[i][u];
+        for (int i = MAXLN; i >= 0; --i) {
+            if (diff & (1 << i)) u = pa[i][u];
         }
         if (u == v) return u;
 
-        for (int i = logu; i >= 0; --i) {
+        for (int i = MAXLN; i >= 0; --i) {
             if (pa[i][u] != pa[i][v]) {
                 u = pa[i][u];
                 v = pa[i][v];

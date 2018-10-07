@@ -9,4 +9,4 @@ map <F6> <ESC>:w<CR>:!g++ -g -Wall --std=c++0x -O2 %:r.cpp -o %:r && ./%:r < %:r
 
 map <C-t> :tabnew<CR>
 
-command -nargs=1 PS :cd d:/ | :vi <args>.cpp | vs <args>.in | sp <args>.out
+command -nargs=1 PS :cd ~ | :vi <args>.cpp | vs <args>.in | sp <args>.out
