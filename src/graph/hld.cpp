@@ -63,12 +63,13 @@ struct hld {
         if (depth[u] < depth[v]) swap(u, v);
 
         int diff = depth[u] - depth[v];
-        for (int i = MAXLN; i >= 0; --i) {
+        int logu = floor(log2(depth[u]) + 1e-15);
+        for (int i = logu; i >= 0; --i) {
             if (diff & (1 << i)) u = pa[i][u];
         }
         if (u == v) return u;
 
-        for (int i = MAXLN; i >= 0; --i) {
+        for (int i = logu; i >= 0; --i) {
             if (pa[i][u] != pa[i][v]) {
                 u = pa[i][u];
                 v = pa[i][v];
