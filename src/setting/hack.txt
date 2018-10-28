@@ -1,0 +1,39 @@
+# Header Hack
+#define private public
+#pragma GCC optimize("-O3") // -Ofast
+#pragma GCC target("arch=haswell")
+
+# Bit Hack
+1. Basic functions
+int __builtin_popcount(unsigned int x)
+int __builtin_popcountll(unsigned long long x)
+Returns the number of 1-bits in x.
+int __builtin_clrsb(unsigned int x)
+int __builtin_clrsbll(unsigned long long x)
+Returns the number of leading redundant sign bits in x.
+2. Hidden functions of bitset<>
+_Find_next(int idx)
+_Unchecked_set(int idx)
+_Unchecked_reset(int idx)
+_Unchecked_flip(int idx)
+3. Smallest bit
+(x & -x)
+
+# Reversed DS
+set<int, greater<>>st;
+map<int, int, greater<>>mp;
+priority_queue<int, vector<int>, greater<>>pq;
+
+# Facts
+1. Number of Divisors
+range | number | example
+~10^9 | 1344 | 735134400
+~10^18 | 103680 | 897612484786617600
+2. About Euler's Phi Funtion
+if e >= log2(m) then pow(n, e) % m == pow(n, phi(m) + e % phi(m)) % m
+phi(phi(...phi(x))) is 0 in O(log(x))
+3. Matrix Sum
+if det(A) then I + A + A^2 + ... + A^n = (I - A^n)(I - A)^-1 
+else A + A^2 + ... + A^2n = (I + A^n)(A + A^2 + ... + A^n)
+4. Wilson's Theorem
+p is prime <=> fact(p-1) % p == p-1
