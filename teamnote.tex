@@ -352,13 +352,56 @@ $A = i + \frac{b}{2} - 1$
 \section{Miscellaneous}
 
 \subsection{account}
-\lstinputlisting{src/setting/account.txt}
+\lstinputlisting{src/miscellaneous/account.txt}
 
 \subsection{Fast I/O}
 \lstinputlisting[style=mycpp]{src/miscellaneous/fastio.cpp}
 
-\subsection{Hack}
-\lstinputlisting{src/setting/hack.txt}
+\subsection{Header Hack}
+\lstinputlisting[style=mycpp]{src/miscellaneous/header.cpp}
+
+\subsection{Bit Hack}
+\lstinputlisting[style=mycpp]{src/miscellaneous/bit.cpp}
+
+\subsection{Reversed DS}
+\lstinputlisting[style=mycpp]{src/miscellaneous/reversed.cpp}
+
+\subsection{Facts}
+1. Maximum Number of Divisors
+
+어느 범위까지의 약수의 최대 갯수는 대략 그 범위의 세제곱근이다.
+
+$10^{9}$까지 $1\,344$개이며 그 수는 $735\,134\,400$이다.
+
+$10^{18}$까지 $103\,680$개이며 그 수는$897\,612\,484\,786\,617\,600$이다.
+
+2. Property of Euler's Totient Funtion
+
+만약 $e \geq log_2(m)$면 다음이 성립한다.
+
+\begin{displaymath}
+n^{e} \equiv n^{\phi(m) + e \% \phi(m)} \pmod{m}
+\end{displaymath}
+
+또한 $\phi(\phi(...\phi(x)))$ 은 $log_2(x)$ 번 안에 $0$이 된다.
+
+3. Sum of Matrix
+
+행렬 $A$ 에 대해 아래의 식을 참고하여 분할 정복을 할 수 있다.
+
+\begin{displaymath}
+A + A^{2} + ... + A^{2n} = (I + A^{n})(A + A^{2} + ... + A^{n})
+\end{displaymath}
+
+만약 $A$가 역행렬이 있을때는 특별히 아래의 식이 성립한다.
+
+\begin{displaymath}
+I + A + A^{2} + ... + A^{n} = (I - A^{n})(I - A)^{-1}
+\end{displaymath}
+
+4. Wilson's Theorem
+
+$p$ 가 소수이면, $(p-1)! \equiv -1 \pmod{p}$ 이다.
 
 \subsection{Magic Numbers}
 
